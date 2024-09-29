@@ -21,33 +21,30 @@ npm install phantom-puppeteer-wrapper
 
 1. Create a Page
 ```javascript
-const phantom = require('phantom-puppeteer-wrapper');
-
-(async () => {
-  await phantom.createPage();
-})();
+const { webpage } = require('phantom-puppeteer-wrapper');
+const page = webpage.create();
 ```
 2. Open a URL
 ```javascript
-phantom.open('http://example.com', (status) => {
-  console.log("Page status:", status);  // 'success' or 'fail'
+page.open('http://example.com', (status) => {
+  console.log("Page status:", status);
 });
 ```
 3. Evaluate Javascript on the page
 ```javascript
-const result = await phantom.evaluate(() => {
+const result = await page.evaluate(() => {
   return document.title;
 });
-console.log("Page title:", result);  // e.g., 'Example Domain'
+console.log("Page title:", result);
 ```
 4. Take a screenshot
 ```javascript
-await phantom.render('screenshot.png');
+await page.render('screenshot.png');
 console.log("Screenshot saved.");
 ```
 5. Close the browser
 ```javascript
-await phantom.close();
+await page.close();
 console.log("Browser closed.");
 ```
 
