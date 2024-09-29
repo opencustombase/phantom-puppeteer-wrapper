@@ -1,0 +1,29 @@
+{
+  "name": "phantom-puppeteer-wrapper",
+  "version": "0.0.1",
+  "description": "A PhantomJS drop in replacement utilizing Puppeteer as the web driver.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opencustombase/phantom-puppeteer-wrapper.git"
+  },
+  "keywords": [
+    "phantomjs",
+    "puppeteer"
+  ],
+  "author": "ronald.villaver",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/opencustombase/phantom-puppeteer-wrapper/issues"
+  },
+  "homepage": "https://github.com/opencustombase/phantom-puppeteer-wrapper#readme",
+  "dependencies": {
+    "puppeteer": "^23.4.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
