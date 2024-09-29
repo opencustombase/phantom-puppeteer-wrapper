@@ -27,11 +27,19 @@ const page = webpage.create();
 2. Open a URL
 ```javascript
 page.open('http://example.com', (status) => {
-  console.log("Page status:", status);
+  console.log("Page status:", status);  // 'success' or 'fail'
 });
 ```
 3. Evaluate Javascript on the page
 ```javascript
+page.includeJs('http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js', async () => {
+  const result = await page.evaluate(() => {
+    return $(".explanation").text();
+  });
+  console.log('Result:', result);
+  page.exit(0);  // Close browser and exit with status 0
+});
+
 const result = await page.evaluate(() => {
   return document.title;
 });
@@ -44,7 +52,7 @@ console.log("Screenshot saved.");
 ```
 5. Close the browser
 ```javascript
-await page.close();
+await page.exit(0);
 console.log("Browser closed.");
 ```
 
